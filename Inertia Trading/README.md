@@ -1,7 +1,7 @@
 # Inertia Trading – Boeing (BA) & S&P 500 (SPY)
 ### Machine Learning and Rule-Based Short-Term Trading Strategies
 
-## 🧭 Overview
+## Overview
 
 This repository explores short-term trading strategies using Boeing (BA) and, for comparison, the S&P 500 ETF (SPY).  
 Two distinct but complementary approaches are developed:
@@ -16,7 +16,6 @@ Two distinct but complementary approaches are developed:
    Employs k-Nearest Neighbors (k-NN) and Logistic Regression models to classify weeks as green (buy) or red (cash)  
    and simulate portfolio performance relative to a buy-and-hold baseline.
 
----
 
 ## 1. Day Trading – Inertia Strategy
 
@@ -41,7 +40,6 @@ Using daily `Open` and `Close` prices, the strategy decides whether to take a lo
    - Each trade uses a fixed $100 investment.
    - Transaction costs are ignored for simplicity.
 
----
 
 ## 2. Weekly Machine Learning Strategy (BA)
 
@@ -61,17 +59,9 @@ Models:
 
 Both models significantly outperform buy-and-hold when simulated over 2023–2024.
 
----
 
 ## Tools and Libraries
 - Python, Pandas, NumPy  
 - scikit-learn (KNeighborsClassifier, LogisticRegression)  
 - Matplotlib, Seaborn  
 - Jupyter Notebook / Quarto
-
----
-
-## Author
-Dinara Zhorabek  
-Graduate Student in Applied Business Analytics, Boston University  
-📧 [LinkedIn Profile](https://www.linkedin.com/in/dinarazhorabek/)
