@@ -53,15 +53,19 @@ Each week is labeled as:
 - Green → buy signal (stay invested)  
 - Red → sell signal (move to cash)  
 
-Models:
-- k-NN (k=3): nonlinear classifier achieving 97% accuracy  
-- Logistic Regression: interpretable linear model with 94% accuracy  
+**Linear Classification Baseline**
+A simple visual rule from 2023 showed that a vertical cutoff at μ = −100 cleanly separates green and red weeks.
+Applied to 2024, this rule achieved 100 % accuracy and generated a $162.39 profit from a $100 initial investment.
+
+**Machine Learning Models**
+- k-NN (k=3): nonlinear classifier achieving 97% accuracy
+- Logistic Regression: interpretable linear model with 94% accuracy
 
 Both models significantly outperform buy-and-hold when simulated over 2023–2024.
 
 
 ## Tools and Libraries
-- Python, Pandas, NumPy  
-- scikit-learn (KNeighborsClassifier, LogisticRegression)  
-- Matplotlib, Seaborn  
+- Python, Pandas, NumPy
+- scikit-learn (KNeighborsClassifier, LogisticRegression)
+- Matplotlib, Seaborn
 - Jupyter Notebook / Quarto
