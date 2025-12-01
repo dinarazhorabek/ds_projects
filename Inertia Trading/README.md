@@ -149,3 +149,14 @@ This analysis demonstrated how stocks with very different market profiles can be
 - scikit-learn (KNN, Logistic Regression, SVM, NB, LDA/QDA, Decision Tree, Random Forest)
 - Matplotlib, Seaborn
 - Jupyter Notebook / Quarto
+
+## Tools and Libraries
+
+- **Python**, **Pandas**, **NumPy** – data processing, feature engineering, and weekly aggregation  
+- **scikit-learn** – machine learning and clustering models  
+  - Classification: KNN, Logistic Regression, SVM (Linear, RBF, Polynomial), Naïve Bayes, LDA/QDA, Decision Tree, Random Forest, AdaBoost  
+  - Clustering: KMeans  
+  - Preprocessing: StandardScaler  
+- **SciPy** – Hamming distance calculations for trajectory comparison  
+- **Matplotlib**, **Seaborn** – visualizations, heatmaps, cluster plots, performance charts  
+- **Jupyter Notebook** / **Quarto** – exploratory analysis and reporting
