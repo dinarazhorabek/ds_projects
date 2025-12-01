@@ -17,7 +17,19 @@ Includes trading simulations, model comparisons, and visual insights.
 
 ---
 
-### **2. Food & Vitamins Analysis**
+### **2. Banknote Authentication – k-NN & Logistic Regression**
+Using the UCI Banknote Authentication Dataset:
+- Exploratory pairplots for real vs. fake notes  
+- Simple rule-based classifier  
+- Optimized **k-NN** model (k=3 → ~99.7% accuracy)  
+- **Logistic Regression** with coefficient interpretation  
+- Feature-importance analysis through exclusion tests  
+
+Focuses on understanding classifier behavior and feature influence.
+
+---
+
+### **3. Food & Vitamins Analysis**
 Analysis of the Kaggle Food Nutrition dataset:
 - Nutrient distributions across food categories  
 - Rule-based nutrient classifier  
@@ -26,13 +38,6 @@ Analysis of the Kaggle Food Nutrition dataset:
 
 ---
 
-### **3. Additional Notebooks**
-Various exploratory notebooks covering:
-- Data preprocessing and visualization techniques  
-- Statistical analysis  
-- Model prototyping and experimentation  
-
----
 
 ## 🛠 Tech Stack
 
