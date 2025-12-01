@@ -57,12 +57,12 @@ Train/Test Split:
 - Training Period: 2023-2024
 - Testing Period: 2020-2022
 
-**Linear Classification Baseline**
+### Linear Classification Baseline
 
 A simple visual rule from 2023 showed that a vertical cutoff at μ = −100 cleanly separates green and red weeks.  
 Applied to 2024, this rule achieved 100 % accuracy and generated a $162.39 profit from a $100 initial investment.
 
-**Machine Learning Models**
+### Machine Learning Models
 - k-Nearest Neighbors (kNN)
 - Logistic Regression
 - Naïve Bayes (Student-t and Exponential)
@@ -71,7 +71,7 @@ Applied to 2024, this rule achieved 100 % accuracy and generated a $162.39 profi
 - Random Forest
 - Support Vector Machines (Linear, Gaussian/RBF, Polynomial degree 2)
 
-**Comparison of Classification Models**
+### Comparison of Classification Models
 | Model           |   TPR | TNR | Accuracy | Trading Strategy (Year 1–2023) | Trading Strategy (Year 2–2024) |
 |-----------------|-------|-----|----------|---------------------------------|---------------------------------|
 | kNN             | 0.812 | 1   | 0.971    | 171.47                          | 252.42                          |
@@ -125,12 +125,13 @@ Beyond supervised classification, unsupervised learning techniques were applied 
 
 Results showed that return–volatility features naturally form meaningful regimes, further supporting the ML findings. This provided an unsupervised confirmation that BA’s weekly behavior is predictable and forms stable patterns over time.
 
-### Clustering Across Dow Jones Stocks (AMZN, JNJ, MCD, NKE, NVDA)
+### Clustering Across Dow Jones Stocks
 To compare the stability and similarity of stock behavior, the same k-means clustering framework was applied to five Dow Jones components: AMZN, JNJ, MCD, NKE, NVDA.
 
 Each stock’s weekly (µ, σ) values were clustered, and we tracked how the stock moved across clusters month-to-month.
 
 **Hamming Distance Analysis**
+
 A Hamming distance metric was used to compare cluster trajectories between stocks:
 - Highest distance:
    NVDA vs. JNJ (distance = 50) → most different behavioral patterns
