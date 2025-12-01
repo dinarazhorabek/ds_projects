@@ -53,9 +53,9 @@ Each week is labeled as:
 - Green → buy signal (stay invested)  
 - Red → sell signal (move to cash)  
 
-To evaluate model generalization under different market regimes:
-- Testing Period: 2020-2022
+Train/Test Split:
 - Training Period: 2023-2024
+- Testing Period: 2020-2022
 
 **Linear Classification Baseline**
 
@@ -72,6 +72,20 @@ Applied to 2024, this rule achieved 100 % accuracy and generated a $162.39 profi
 - Support Vector Machines (Linear, Gaussian/RBF, Polynomial degree 2)
 
 **Comparison of Classification Models**
+| Model           |   TPR | TNR | Accuracy | Trading Strategy (Year 1–2023) | Trading Strategy (Year 2–2024) |
+|-----------------|-------|-----|----------|---------------------------------|---------------------------------|
+| kNN             | 0.812 | 1   | 0.971    | 171.47                          | 252.42                          |
+| Logreg          | 0.688 | 1   | 0.952    | 152.69                          | 224.78                          |
+| NB              | 0.188 | 1   | 0.876    | 135.09                          | 118.84                          |
+| NB (student-t)  | 0     | 1   | 0.848    | 135.09                          | 91.50                           |
+| NB (exp)        | 1     | 0   | 0.152    | 100.00                          | 100.00                          |
+| LDA             | 0.188 | 1   | 0.876    | 135.09                          | 133.51                          |
+| QDA             | 0.188 | 1   | 0.876    | 135.09                          | 133.51                          |
+| Decision Tree   | 1     | 1   | 1.000    | 181.28                          | 294.39                          |
+| Random Forest   | 1     | 1   | 1.000    | 181.28                          | 294.39                          |
+| Linear SVM      | 0.750 | 1   | 0.962    | 159.58                          | 234.92                          |
+| Gaussian SVM    | 0.812 | 1   | 0.971    | 159.58                          | 245.92                          |
+| Poly SVM (d=2)  | 0     | 1   | 0.848    | 135.09                          | 91.50                           |
 
 Based on the results, the kNN and Gaussian SVM models achieved the highest accuracy
 (97.1%), effectively identifying both “green” (buy) and “red” (sell) weeks, with true positive
