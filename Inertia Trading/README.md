@@ -114,8 +114,37 @@ also learned that Naïve Bayes tends to perform poorly on datasets with highly c
 features. Additionally, increasing the polynomial degree in SVM models can lead to overfitting,
 where the model captures noise instead of meaningful patterns.
 
+## 3. Clustering Analysis
+Beyond supervised classification, unsupervised learning techniques were applied to explore structure in weekly return–volatility patterns.
+
+**K-Means Clustering on Boeing (BA)**
+- Weekly features (mean return µ and volatility σ) for BA were clustered using k-means to identify natural behavioral regimes.
+- The optimal number of clusters was chosen using the inertia (elbow) method, which suggested k = 4 as the best balance between separation and complexity.
+- Each cluster showed distinct characteristics—some dominated by “green” (buy) weeks, others by “red” (cash) weeks.
+- Cluster purity analysis was used to measure how consistently each cluster aligned with trading labels.
+
+Results showed that return–volatility features naturally form meaningful regimes, further supporting the ML findings. This provided an unsupervised confirmation that BA’s weekly behavior is predictable and forms stable patterns over time.
+
+**Clustering Across Dow Jones Stocks (AMZN, JNJ, MCD, NKE, NVDA)**
+To compare the stability and similarity of stock behavior, the same k-means clustering framework was applied to five Dow Jones components: AMZN, JNJ, MCD, NKE, NVDA.
+
+Each stock’s weekly (µ, σ) values were clustered, and we tracked how the stock moved across clusters month-to-month.
+
+**Hamming Distance Analysis**
+A Hamming distance metric was used to compare cluster trajectories between stocks:
+- Highest distance:
+   NVDA vs. JNJ (distance = 50) → most different behavioral patterns
+- Lowest distance:
+   MCD vs. NKE (distance = 28) → most similar trajectories
+- Stability:
+   MCD and NKE had the longest cluster streaks, indicating steady behavior
+- Variability:
+   NVDA showed the highest month-to-month switching, making it the least stable
+
+This analysis demonstrated how stocks with very different market profiles can be quantified using unsupervised learning, highlighting relationships not easily visible through price charts alone.
+
 ## Tools and Libraries
 - Python, Pandas, NumPy
-- scikit-learn (KNeighborsClassifier, LogisticRegression)
+- scikit-learn (KNN, Logistic Regression, SVM, NB, LDA/QDA, Decision Tree, Random Forest)
 - Matplotlib, Seaborn
 - Jupyter Notebook / Quarto
