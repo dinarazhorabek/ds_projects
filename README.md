@@ -50,5 +50,3 @@ Each project folder contains:
 - Supporting datasets (CSV)
 - Visualizations  
 - README files with explanations and findings
-
----
