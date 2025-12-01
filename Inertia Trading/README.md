@@ -1,20 +1,24 @@
 # Inertia Trading – Boeing (BA) & S&P 500 (SPY)
-### Machine Learning and Rule-Based Short-Term Trading Strategies
+### Machine Learning, Rule-Based Strategies, and Clustering Analysis
 
 ## Overview
 
-This repository explores short-term trading strategies using Boeing (BA) and, for comparison, the S&P 500 ETF (SPY).  
-Two distinct but complementary approaches are developed:
+This repository explores short-term trading behavior in Boeing (BA) using a combination of rule-based trading, supervised machine learning, and unsupervised clustering.  
+SPY (S&P 500 ETF) is included as a baseline comparison in the initial analysis.
 
+The project consists of three main components:
 1. Day Trading – Inertia Strategy (BA & SPY)  
-   Focuses on intraday momentum persistence using daily open–close prices.  
-   It tests whether overnight price movements tend to continue during the following trading day.  
-   SPY data is included only for baseline comparison at the beginning of the analysis.  
+   A rule-based approach using daily open–close behavior to test whether overnight price movements persist intraday.  
+   Positions are opened at the market open and closed at the same day’s close, using a fixed $100 per trade.
 
 2. Weekly Trading – Machine Learning Labeling Strategy (BA)  
-   Extends the analysis to a weekly horizon using features such as mean return and volatility.  
-   Employs k-Nearest Neighbors (k-NN) and Logistic Regression models to classify weeks as green (buy) or red (cash)  
-   and simulate portfolio performance relative to a buy-and-hold baseline.
+   A classification-based approach using weekly features such as mean return and volatility.  
+   Multiple ML models—including Logistic Regression, kNN, SVMs, Decision Trees, Random Forest, Naïve Bayes, and LDA/QDA—are trained (2023–2024) and tested out-of-sample (2020–2022) to label weeks as  
+   **green (buy)** or **red (cash)** and evaluate trading performance relative to buy-and-hold.
+
+3. Clustering Analysis (BA + Dow Jones Stocks)  
+   Weekly (µ, σ) patterns are also explored using k-means clustering to identify natural behavioral regimes.  
+   Additional clustering of Dow Jones stocks (AMZN, JNJ, MCD, NKE, NVDA) is used to compare cross-stock behavior using cluster trajectories and Hamming distances to measure similarity and stability.
 
 
 ## 1. Day Trading – Inertia Strategy
