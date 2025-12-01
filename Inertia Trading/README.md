@@ -14,8 +14,7 @@ The project consists of three main components:
 
 2. **Weekly Trading – Machine Learning Labeling Strategy (BA)**  
    A classification-based approach using weekly features such as mean return and volatility.  
-   Multiple ML models—including Logistic Regression, kNN, SVMs, Decision Trees, Random Forest, Naïve Bayes, and LDA/QDA—are trained on **2023–2024** data and tested out-of-sample on **2020–2022** to label weeks as  
-   **green (buy)** or **red (cash)** and evaluate simulated trading performance.
+   Multiple ML models—including Logistic Regression, kNN, SVMs, Decision Trees, Random Forest, Naïve Bayes, and LDA/QDA—are trained on **2023–2024** data and tested out-of-sample on **2020–2022** to label weeks as **green (buy)** or **red (cash)** and evaluate simulated trading performance.
 
 3. **Clustering Analysis (BA + Dow Jones Stocks)**  
    Weekly (μ, σ) patterns are analyzed using k-means clustering to identify natural behavioral regimes in BA.  
@@ -33,17 +32,15 @@ Using daily `Open` and `Close` prices, the strategy determines whether to take a
 ### Trading Rules
 
 1. **Positive Overnight Return → Long Position**
-   - If today’s `Open` is higher than yesterday’s `Close`,  
-     go long by investing $100 at the `Open` price and selling at the `Close`.
-   - Profit/Loss per share: `Close – Open`
+   - If the current day’s `Open` is higher than the previous day’s `Close`, go long by investing $100 at the `Open` price and selling at the `Close`.
+   - Profit/Loss per share: `Close – Open`.
 
 2. **Negative Overnight Return → Short Position**
-   - If today’s `Open` is lower than yesterday’s `Close`,  
-     short $100 worth of shares at `Open` and cover at `Close`.
-   - Profit/Loss per share: `Open – Close`
+   - If the current day’s `Open` is lower than the previous day’s `Close`, short $100 worth of shares at `Open` and cover at `Close`.
+   - Profit/Loss per share: `Open – Close`.
 
 3. **Assumptions**
-   - A trade occurs every day unless `Open == previous Close`.  
+   - The strategy trades every day unless Open equals the previous day’s `Close`.  
    - Each trade uses a fixed $100 investment.  
    - Transaction costs are ignored for simplicity.
 
@@ -52,7 +49,7 @@ Using daily `Open` and `Close` prices, the strategy determines whether to take a
 
 ## 2. Weekly Machine Learning Strategy (BA)
 
-This section extends the inertia concept to weekly decisions using machine learning.  
+This section builds on the same concept but scales it to a weekly decision framework using machine learning.  
 Weekly Boeing data is used to compute:
 
 - **Mean Return (μ):** average weekly price change  
@@ -67,8 +64,7 @@ Each week is labeled as:
 - **Testing Period:** 2020–2022  
 
 ### Linear Classification Baseline
-A simple visual rule discovered in 2023—  
-**μ = −100** —cleanly separated green and red weeks.  
+A simple visual rule from 2023 showed that a vertical cutoff at **μ = −100** cleanly separates green and red weeks.  
 Applied to 2024, this rule achieved **100% accuracy** and produced a **$162.39** profit from a $100 initial investment.
 
 ### Machine Learning Models
@@ -113,13 +109,15 @@ Logistic Regression requires minimal tuning, whereas kNN, Random Forest, and SVM
 
 ## 3. Clustering Analysis
 
-Unsupervised learning techniques were used to analyze structure in weekly return–volatility behavior.
+Beyond supervised classification, unsupervised learning techniques were applied to explore structure in weekly return–volatility patterns.
 
 ### K-Means Clustering on Boeing (BA)
 - Weekly (μ, σ) features were clustered using k-means.  
 - The elbow method suggested **k = 4** as the optimal number of clusters.  
 - Some clusters contained mostly “green” weeks, others mostly “red,” showing clear behavioral regimes.  
-- Cluster purity analysis confirmed meaningful separation consistent with ML classification results.
+- Cluster purity analysis was used to measure how consistently each cluster aligned with trading labels.
+
+Results showed that return–volatility features naturally form meaningful regimes, further supporting the ML findings. This provided an unsupervised confirmation that BA’s weekly behavior is predictable and forms stable patterns over time.
 
 ### Clustering Across Dow Jones Stocks
 The same k-means workflow was applied to five Dow Jones components: **AMZN, JNJ, MCD, NKE, NVDA**.  
