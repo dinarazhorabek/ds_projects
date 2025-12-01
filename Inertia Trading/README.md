@@ -40,7 +40,7 @@ Using daily `Open` and `Close` prices, the strategy determines whether to take a
    - Profit/Loss per share: `Open – Close`.
 
 3. **Assumptions**
-   - The strategy trades every day unless Open equals the previous day’s `Close`.  
+   - The strategy trades every day unless `Open` equals the previous day’s `Close`.  
    - Each trade uses a fixed $100 investment.  
    - Transaction costs are ignored for simplicity.
 
