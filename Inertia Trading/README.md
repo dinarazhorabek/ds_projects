@@ -7,16 +7,17 @@ This repository explores short-term trading behavior in Boeing (BA) using a comb
 SPY (S&P 500 ETF) is included as a baseline comparison in the initial analysis.
 
 The project consists of three main components:
-1. Day Trading – Inertia Strategy (BA & SPY)  
+
+1. **Day Trading – Inertia Strategy (BA & SPY)**  
    A rule-based approach using daily open–close behavior to test whether overnight price movements persist intraday.  
    Positions are opened at the market open and closed at the same day’s close, using a fixed $100 per trade.
 
-2. Weekly Trading – Machine Learning Labeling Strategy (BA)  
+2. **Weekly Trading – Machine Learning Labeling Strategy (BA)**  
    A classification-based approach using weekly features such as mean return and volatility.  
    Multiple ML models—including Logistic Regression, kNN, SVMs, Decision Trees, Random Forest, Naïve Bayes, and LDA/QDA—are trained (2023–2024) and tested out-of-sample (2020–2022) to label weeks as  
    **green (buy)** or **red (cash)** and evaluate trading performance relative to buy-and-hold.
 
-3. Clustering Analysis (BA + Dow Jones Stocks)  
+3. **Clustering Analysis (BA + Dow Jones Stocks)**  
    Weekly (µ, σ) patterns are also explored using k-means clustering to identify natural behavioral regimes.  
    Additional clustering of Dow Jones stocks (AMZN, JNJ, MCD, NKE, NVDA) is used to compare cross-stock behavior using cluster trajectories and Hamming distances to measure similarity and stability.
 
