@@ -53,17 +53,52 @@ Each week is labeled as:
 - Green → buy signal (stay invested)  
 - Red → sell signal (move to cash)  
 
+To evaluate model generalization under different market regimes:
+- Testing Period: 2020-2022
+- Training Period: 2023-2024
+
 **Linear Classification Baseline**
 
 A simple visual rule from 2023 showed that a vertical cutoff at μ = −100 cleanly separates green and red weeks.  
 Applied to 2024, this rule achieved 100 % accuracy and generated a $162.39 profit from a $100 initial investment.
 
 **Machine Learning Models**
-- k-NN (k=3): nonlinear classifier achieving 97% accuracy
-- Logistic Regression: interpretable linear model with 94% accuracy
+- k-Nearest Neighbors (kNN)
+- Logistic Regression
+- Naïve Bayes (Student-t and Exponential)
+- LDA / QDA
+- Decision Tree
+- Random Forest
+- Support Vector Machines (Linear, Gaussian/RBF, Polynomial degree 2)
 
-Both models significantly outperform buy-and-hold when simulated over 2023–2024.
+**Comparison of Classification Models**
 
+Based on the results, the kNN and Gaussian SVM models achieved the highest accuracy
+(97.1%), effectively identifying both “green” (buy) and “red” (sell) weeks, with true positive
+rates around 81%. From a trading perspective, the Decision Tree and Random Forest strategies
+produced the highest cumulative earnings across both years ($294.39), showing consistent
+performance and stable predictions.
+
+The kNN model also performed strongly, reaching $252.42 in 2024, confirming its robustness in
+pattern recognition. In contrast, the Naïve Bayes (exponential) model failed to enter trades,
+maintaining the initial $100 cash balance with the lowest accuracy (15.2%). This suggests that
+the exponential density function was unsuitable for this dataset.
+
+Models like Logistic Regression, Linear SVM, and Gaussian SVM achieved a good balance
+between accuracy and trading performance, while LDA, QDA, and Naïve Bayes (Student-t)
+showed moderate accuracy (~87%) but weaker profit outcomes like a buy-and-hold strategy.
+Overall, these findings indicate that the data can be effectively separated and clustered, likely
+due to strong correlations between features (mean return and volatility). Tree-based and kernel-
+based models outperformed probabilistic ones, making them more reliable for this stock’s trend
+prediction.
+
+While implementing all these models, I gained a deeper understanding of how each algorithm
+works and what differentiates them. For example, logistic regression is relatively simple and
+doesn’t require tuning hyperparameters, unlike models such as kNN or Random Forest. Both
+kNN and SVM models require feature scaling since they rely on distance-based calculations. I
+also learned that Naïve Bayes tends to perform poorly on datasets with highly correlated
+features. Additionally, increasing the polynomial degree in SVM models can lead to overfitting,
+where the model captures noise instead of meaningful patterns.
 
 ## Tools and Libraries
 - Python, Pandas, NumPy
