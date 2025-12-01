@@ -117,7 +117,7 @@ where the model captures noise instead of meaningful patterns.
 ## 3. Clustering Analysis
 Beyond supervised classification, unsupervised learning techniques were applied to explore structure in weekly return–volatility patterns.
 
-**K-Means Clustering on Boeing (BA)**
+### K-Means Clustering on Boeing (BA)
 - Weekly features (mean return µ and volatility σ) for BA were clustered using k-means to identify natural behavioral regimes.
 - The optimal number of clusters was chosen using the inertia (elbow) method, which suggested k = 4 as the best balance between separation and complexity.
 - Each cluster showed distinct characteristics—some dominated by “green” (buy) weeks, others by “red” (cash) weeks.
@@ -125,7 +125,7 @@ Beyond supervised classification, unsupervised learning techniques were applied 
 
 Results showed that return–volatility features naturally form meaningful regimes, further supporting the ML findings. This provided an unsupervised confirmation that BA’s weekly behavior is predictable and forms stable patterns over time.
 
-**Clustering Across Dow Jones Stocks (AMZN, JNJ, MCD, NKE, NVDA)**
+### Clustering Across Dow Jones Stocks (AMZN, JNJ, MCD, NKE, NVDA)
 To compare the stability and similarity of stock behavior, the same k-means clustering framework was applied to five Dow Jones components: AMZN, JNJ, MCD, NKE, NVDA.
 
 Each stock’s weekly (µ, σ) values were clustered, and we tracked how the stock moved across clusters month-to-month.
